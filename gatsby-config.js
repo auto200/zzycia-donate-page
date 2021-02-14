@@ -7,6 +7,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {},
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
