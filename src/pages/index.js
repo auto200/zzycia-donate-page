@@ -156,6 +156,8 @@ const IndexPage = () => {
               disabled={!canSend}
               type="submit"
               bgColor={canSend && "green.500"}
+              _hover={{ bgColor: "green.400" }}
+              _active={{ bgColor: "green.300" }}
             >
               Dalej
             </Button>
