@@ -149,7 +149,7 @@ const IndexPage = () => {
                 }}
               />
               {encodedMessage.length >= ENCODED_MESSAGE_MAX_LENGTH && (
-                <Text pos="absolute" bottom="2" right="2" color="red.300">
+                <Text pos="absolute" bottom="2" right="2" color="yellow.300">
                   Osiągnięto limit znaków
                 </Text>
               )}
