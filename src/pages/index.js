@@ -60,11 +60,11 @@ const IndexPage = () => {
     const url = new URL("https://platnosc.hotpay.pl");
     url.searchParams.append("SEKRET", HOTPAY_SECRET);
     url.searchParams.append("KWOTA", options[activeOptionId].ammout);
-    url.searchParams.append("NAZWA_USLUGI", "tutaj bedzie nazwa uslugi");
-    url.searchParams.append("ADRES_WWW", "https://thank-you-url.pl");
+    url.searchParams.append("NAZWA_USLUGI", "Donate");
+    // url.searchParams.append("ADRES_WWW", "https://thank-you-url.pl");
     url.searchParams.append("ID_ZAMOWIENIA", encodedMessage);
     setHotpayUrl(url.href);
-  }, [options.custom.ammout, activeOptionId]);
+  }, [options.custom.ammout, activeOptionId, encodedMessage]);
 
   return (
     <>
@@ -156,7 +156,7 @@ const IndexPage = () => {
               disabled={!canSend}
               type="submit"
               bgColor={canSend && "green.500"}
-              _hover={{ bgColor: "green.400" }}
+              _hover={{ bgColor: canSend && "green.400" }}
               _active={{ bgColor: "green.300" }}
             >
               Dalej
