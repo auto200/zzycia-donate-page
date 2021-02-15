@@ -139,7 +139,7 @@ const IndexPage = () => {
             <Box pos="relative">
               <Textarea
                 disabled={!canSend}
-                placeholder="Twoja wiadomość"
+                placeholder="Twoja wiadomość (opcjonalnie)"
                 value={decodeURIComponent(encodedMessage)}
                 onChange={e => {
                   const message = encodeURIComponent(e.target.value);
@@ -148,9 +148,11 @@ const IndexPage = () => {
                   }
                 }}
               />
-              <Text pos="absolute" bottom="2" right="2">
-                {encodedMessage.length}/{ENCODED_MESSAGE_MAX_LENGTH}
-              </Text>
+              {encodedMessage.length >= ENCODED_MESSAGE_MAX_LENGTH && (
+                <Text pos="absolute" bottom="2" right="2" color="red.300">
+                  Osiągnięto limit znaków
+                </Text>
+              )}
             </Box>
             <Button
               disabled={!canSend}
