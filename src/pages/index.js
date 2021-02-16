@@ -57,6 +57,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     if (!activeOptionId) return;
+
     const url = new URL("https://platnosc.hotpay.pl");
     url.searchParams.append("SEKRET", HOTPAY_SECRET);
     url.searchParams.append("KWOTA", options[activeOptionId].ammout);
@@ -97,10 +98,10 @@ const IndexPage = () => {
                     _hover={{
                       cursor: "pointer",
                       bgColor: "gray.700",
-                      "& button, & div div": { bgColor: "green.500" },
                     }}
                     bgColor={active && "gray.600"}
                     rounded="lg"
+                    role="group"
                     p={2}
                   >
                     {id === "custom" ? (
@@ -120,12 +121,21 @@ const IndexPage = () => {
                             })
                           }
                         />
-                        <InputRightAddon bgColor={active && "green.600"}>
+                        <InputRightAddon
+                          bgColor={active && "green.600"}
+                          _groupHover={{ bgColor: "green.500" }}
+                          _groupActive={{ bgColor: "green.400" }}
+                        >
                           {currency}
                         </InputRightAddon>
                       </InputGroup>
                     ) : (
-                      <Button m="2" bgColor={active ? "green.600" : "gray.700"}>
+                      <Button
+                        m="2"
+                        bgColor={active ? "green.600" : "gray.700"}
+                        _groupHover={{ bgColor: "green.500" }}
+                        _groupActive={{ bgColor: "green.400" }}
+                      >
                         {ammout}
                         {currency}
                       </Button>
