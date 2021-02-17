@@ -72,7 +72,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Center>
         <Heading m="5" as="h1">
-          Rzuć coś Sebkowi 🧔
+          Wesprzyj Sebka 🧔
         </Heading>
       </Center>
       <Center m="2">
