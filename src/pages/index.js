@@ -17,7 +17,7 @@ import {
   InputRightAddon,
   Box,
   chakra,
-  useClipboard,
+  // useClipboard,
 } from "@chakra-ui/react";
 import {
   defaultOptions,
@@ -35,7 +35,7 @@ const IndexPage = () => {
   const [activeOptionId, setActiveOptionId] = useState("");
   const [canSend, setCanSend] = useState(false);
   const [hotpayUrl, setHotpayUrl] = useState("");
-  const { onCopy } = useClipboard(hotpayUrl);
+  // const { onCopy } = useClipboard(hotpayUrl);
 
   const customAmmountInputRef = useRef(null);
 
@@ -159,7 +159,7 @@ const IndexPage = () => {
                 }}
               />
               {encodedMessage.length >= ENCODED_MESSAGE_MAX_LENGTH && (
-                <Text pos="absolute" bottom="2" right="2" color="yellow.300">
+                <Text pos="absolute" bottom="2" right="6" color="yellow.300">
                   Osiągnięto limit znaków
                 </Text>
               )}
@@ -173,9 +173,9 @@ const IndexPage = () => {
             >
               Dalej
             </Button>
-            <Text onClick={onCopy} _hover={{ cursor: "pointer" }}>
+            {/* <Text onClick={onCopy} _hover={{ cursor: "pointer" }}>
               {hotpayUrl}
-            </Text>
+            </Text> */}
           </Stack>
         </chakra.form>
       </Center>
