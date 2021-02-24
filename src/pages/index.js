@@ -17,6 +17,7 @@ import {
   InputRightAddon,
   Box,
   chakra,
+  Image,
   // useClipboard,
 } from "@chakra-ui/react";
 import {
@@ -24,6 +25,8 @@ import {
   ENCODED_MESSAGE_MAX_LENGTH,
   HOTPAY_SECRET,
 } from "../utils/constants";
+//@ts-ignore
+import sebekImg from "../images/sebek.png";
 
 const IndexPage = () => {
   const [options, setOptions] = useState(defaultOptions);
@@ -69,13 +72,16 @@ const IndexPage = () => {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO />
       <Center>
-        <Heading m="5" as="h1">
-          Wesprzyj Sebka 🧔
-        </Heading>
+        <chakra.header m="5" mb="0" display="flex" alignItems="center">
+          <Heading as="h1" fontSize="4xl">
+            Wesprzyj Sebka
+          </Heading>
+          <Image src={sebekImg} w="40" />
+        </chakra.header>
       </Center>
-      <Center m="2">
+      <Center m="2" mt="0">
         <chakra.form
           w="100%"
           maxW="550px"
@@ -167,6 +173,8 @@ const IndexPage = () => {
             <Button
               disabled={!canSend}
               type="submit"
+              mb="10"
+              h="16"
               bgColor={canSend && "green.500"}
               _hover={{ bgColor: canSend && "green.400" }}
               _active={{ bgColor: "green.300" }}
