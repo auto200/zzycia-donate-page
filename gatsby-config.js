@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Wesprzyj Sebka 🧔`,
+    title: `Wesprzyj Sebka`,
     description: `Tutaj możesz wesprzeć Sebka, autora kanału z życia na youtube`,
     author: `Sebek`,
   },
