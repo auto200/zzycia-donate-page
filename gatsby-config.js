@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/wsparcie",
   siteMetadata: {
     title: `Wesprzyj Sebka`,
     description: `Tutaj możesz wesprzeć Sebka, autora kanału z życia na youtube`,
